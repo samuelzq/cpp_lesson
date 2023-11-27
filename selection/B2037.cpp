@@ -15,7 +15,7 @@ int main(void)
 	int n;
 
 	scanf("%d", &n);
-	if (n % 2)
+	if (n % 2 != 0)
 		printf("odd\n");
 	else
 		printf("even\n");

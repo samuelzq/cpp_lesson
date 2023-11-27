@@ -13,7 +13,6 @@ using namespace std;
 int main(void)
 {
 	char c;
-	int i;
 
 	scanf("%c", &c);
 
