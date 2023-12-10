@@ -23,6 +23,6 @@ int main(void)
         printf("Normal\n");
     else
  //       cout << bmi << "\nOverweight" << endl;
-       printf("%f\nOverweight\n", bmi);
+       printf("%g\nOverweight\n", bmi);
     return 0;
 }
