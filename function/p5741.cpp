@@ -6,15 +6,33 @@
  * @Date:   2023-12-24
  *
  */
-#include <iostream>
-#include <cmath>
-#include <cstring>
+#include <bits/stdc++.h>
+using namespace std;
 
 struct student {
-    char name[9];
+    string name;
     int chinese;
     int math;
     int english;
+
+    student() : name(""), chinese(0), math(0), english(0) {}
+
+    student(const string &name, int chinese, int math, int english) {
+        this->name = name;
+        this->chinese = chinese;
+        this->math = math;
+        this->english = english;
+    }
+
+    int total() {
+        return this->chinese + this->math + this->english;
+    }
+
+    bool match(struct student &s)
+    {
+        return (abs(this->total() - s.total()) <= 10 && abs(this->chinese - s.chinese) <= 5 && abs(this->math - s.math) <= 5
+                && abs(this->english - s.english) <= 5);
+    }
 } stu[1009];
 
 int main(void)
@@ -23,20 +41,21 @@ int main(void)
 
     memset(stu, 0, sizeof(struct student));
     scanf("%d", &n);
-    for (int i = 0; i < n; i++)
-        scanf("%s %d %d %d", stu[i].name, &stu[i].chinese, &stu[i].math, &stu[i].english);
+    for (int i = 0; i < n; i++) {
+        string name;
+        int c, m, e;
+        cin >> name >> c >> m >> e;
+        struct student tu(name, c, m, e);
+        stu[i] = tu;
+    }
 
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = i + 1; j < n; j++)
         {
-            int a, b;
-            a = stu[i].chinese + stu[i].math + stu[i].english;
-            b = stu[j].chinese + stu[j].math + stu[j].english;
-            if (abs(a - b) <= 10 && abs(stu[i].chinese - stu[j].chinese) <= 5 && abs(stu[i].math - stu[j].math) <= 5 
-                && abs(stu[i].english - stu[j].english) <= 5)
+            if (stu[i].match(stu[j]))
             {
-                printf("%s %s\n", stu[i].name, stu[j].name);
+                cout << stu[i].name << ' ' << stu[j].name << endl;
             }
         }
     }
