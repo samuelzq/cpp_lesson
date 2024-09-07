@@ -1,0 +1,15 @@
+题目,描述
+https://www.luogu.com.cn/problem/P2249,典型的二分查找
+https://www.luogu.com.cn/problem/P1102,先将输入排序，统计一个值a[i]及a[i]+c的个数
+https://www.luogu.com.cn/problem/P1678,首先将分数线排序，然后二分查找小于实际分数的最大值。
+https://www.luogu.com.cn/problem/P2678,二分查找一个合适的最大距离。在该距离下，需要移除的石头数目满足题目要求。如果移除的石头过多则说明距离太大。
+https://www.luogu.com.cn/problem/P2440,可以截取的最短长度是1，最长长度是所有木材中最大的长度。在这个区间中二分查找合适的长度。
+https://www.luogu.com.cn/problem/P3853,在公路的总长度间查找可以选择的最小间隔长度
+https://www.luogu.com.cn/problem/P1182,二次查找分段长度，左值是输入的最大值，右值是maxa*n/m。然后在此区间二分查找，看看满足分组的最小值
+https://www.luogu.com.cn/problem/P1163,二分法查找合适的利率，注意浮点数大小的判定，根据选定利率计算所还的总金额，然后判断利率是否合适。
+https://www.luogu.com.cn/problem/P3743,本题右边界的取值有点意思，
+https://www.luogu.com.cn/problem/P1918,经典二分查找，查找的对象需要用结构体表示。
+https://www.luogu.com.cn/problem/P2759,边界查找问题，找左边界。一个十进制数的位长等log10(x)+1。
+https://www.luogu.com.cn/problem/P1873,在树木的最高值和0之间二分查找一个合适的值，二分查找检测的标准是当前高度得到的长度满足要求。
+https://www.luogu.com.cn/problem/P1577,注意本题输出的要求：答案保留到小数点后 22 位(直接舍掉 22 位后的小数)。一种处理是将输入的数据先乘以100转换成整形数。注意本题是查找有边界，使用经典的模板会导致最后两个测试用例无法通过。
+https://www.luogu.com.cn/problem/P1281,一道比较难的题目。二分查找每个抄手最少的抄写页数，注意检测函数需要检测是否每个抄手都有抄写，且不能有为抄写的内容。本题查找的是左边界（最小值）。因为为了满足前面的人尽可能少抄写，那么就应该先统计后面的人抄写的内容。因此抄写记录需要使用简单的堆栈来记录。
